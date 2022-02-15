@@ -1,4 +1,15 @@
+using Litera.Data;
+using Litera.Data.Repositories;
+using Litera.Data.Repositories.Interfaces;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<LiteraDbContext>(
+        options => options.UseSqlServer("name=ConnectionStrings:DefaultConnection"));
+
+// Register repositories
+builder.Services.AddScoped<IChatRepository, ChatRepository>();
 
 // Add services to the container.
 builder.Services.AddRazorPages();
