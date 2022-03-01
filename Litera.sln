@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Litera.Web", "Litera.Web\Litera.Web.csproj", "{2D2C37A2-21A3-4DC1-AF30-F816757FE811}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Litera.Web", "Litera.Web\Litera.Web.csproj", "{2D2C37A2-21A3-4DC1-AF30-F816757FE811}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Litera.Data", "Litera.Data\Litera.Data.csproj", "{2AA552BE-0502-4DCD-8E28-28AFCF5F64AE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Litera.Data", "Litera.Data\Litera.Data.csproj", "{2AA552BE-0502-4DCD-8E28-28AFCF5F64AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Litera.Business", "Litera.Business\Litera.Business.csproj", "{6F76317F-3DD0-4AD6-B727-FA6984C317B1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{2AA552BE-0502-4DCD-8E28-28AFCF5F64AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2AA552BE-0502-4DCD-8E28-28AFCF5F64AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2AA552BE-0502-4DCD-8E28-28AFCF5F64AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F76317F-3DD0-4AD6-B727-FA6984C317B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F76317F-3DD0-4AD6-B727-FA6984C317B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F76317F-3DD0-4AD6-B727-FA6984C317B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F76317F-3DD0-4AD6-B727-FA6984C317B1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
