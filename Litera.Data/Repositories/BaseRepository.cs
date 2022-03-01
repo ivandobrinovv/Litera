@@ -8,7 +8,7 @@ namespace Litera.Data.Repositories
     public class BaseRepository<T> : IBaseRepository<T> where T : BaseEntity
     {
         protected readonly LiteraDbContext context;
-
+        
         public BaseRepository(LiteraDbContext context)
         {
             this.context = context;

@@ -6,7 +6,7 @@ namespace Litera.Data.Entities
     {
         [Required]
         [StringLength(30, MinimumLength = 2)]
-        public string Name { get; set; } = string.Empty;
+        public string Name { get; set; }
         // check the default array value
         public byte[]? Image { get; set; } = null;
         public string ThemeColor { get; set; } = string.Empty;
