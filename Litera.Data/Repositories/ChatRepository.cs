@@ -8,5 +8,6 @@ namespace Litera.Data.Repositories
         public ChatRepository(LiteraDbContext context)
             : base(context) { 
         }
+        
     }
 }
