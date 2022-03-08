@@ -2,6 +2,7 @@
 using Litera.Data.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
+using System.Reflection;
 
 namespace Litera.Data.Repositories
 {
@@ -49,7 +50,7 @@ namespace Litera.Data.Repositories
 
             if (entity == null)
             {
-                throw new ArgumentException("");
+                throw new ArgumentException($"There is no such {typeof(T)} with id: {id}");
             }
 
             context.Set<T>().Remove(entity);

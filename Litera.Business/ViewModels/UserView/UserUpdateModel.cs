@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Litera.Data.Entities
+namespace Litera.Business.ViewModels.UserView
 {
-    public class User : BaseEntity
+    public class UserUpdateModel
     {
         [Required]
         [MinLength(2)]
@@ -11,8 +11,5 @@ namespace Litera.Data.Entities
 
         [Required]
         public string Email { get; set; }
-
-        public string Password { get; set; } = string.Empty;
-        public virtual ICollection<Chat> Chats { get; set; } = new List<Chat>();
     }
 }

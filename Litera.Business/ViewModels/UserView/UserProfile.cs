@@ -6,13 +6,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Litera.Business.ViewModels.ChatView
+namespace Litera.Business.ViewModels.UserView
 {
-    public class CharProfile : Profile
+    public class UserProfile : Profile
     {
-        public CharProfile()
+        public UserProfile()
         {
-            CreateMap<Chat, ChatViewModel>();  
+            CreateMap<User, UserModel>().ReverseMap();
         }
     }
 }
