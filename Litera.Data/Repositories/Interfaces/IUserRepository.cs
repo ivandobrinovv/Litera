@@ -9,5 +9,6 @@ namespace Litera.Data.Repositories.Interfaces
 {
     public interface IUserRepository : IBaseRepository<User>
     {
+        User? GetByEmail(string email);
     }
 }

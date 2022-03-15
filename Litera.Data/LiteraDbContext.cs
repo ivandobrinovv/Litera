@@ -28,6 +28,7 @@ namespace Litera.Data
 
             modelBuilder.Entity<Message>()
                 .HasOne(m => m.Author);
+                
 
             base.OnModelCreating(modelBuilder);
         }

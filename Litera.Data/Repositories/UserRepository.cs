@@ -12,5 +12,10 @@ namespace Litera.Data.Repositories.Interfaces
         public UserRepository(LiteraDbContext context) : base(context)
         {
         }
+
+        public User? GetByEmail(string email)
+        {
+            return context.Set<User>().SingleOrDefault(u => u.Email == email);
+        }
     }
 }

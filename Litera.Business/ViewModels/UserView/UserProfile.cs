@@ -12,7 +12,8 @@ namespace Litera.Business.ViewModels.UserView
     {
         public UserProfile()
         {
-            CreateMap<User, UserModel>().ReverseMap();
+            CreateMap<User, UserViewModel>().ReverseMap();
+            CreateMap<UserUpdateViewModel, UserViewModel>().ReverseMap();
         }
     }
 }

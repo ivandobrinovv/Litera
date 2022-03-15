@@ -7,8 +7,10 @@ using System.Threading.Tasks;
 
 namespace Litera.Business.ViewModels.UserView
 {
-    public class UserModel
+    public class UserViewModel
     {
+        public Guid Id { get; set; }
+
         [Required]
         [MinLength(2)]
         [MaxLength(30)]

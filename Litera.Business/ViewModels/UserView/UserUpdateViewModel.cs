@@ -2,8 +2,10 @@
 
 namespace Litera.Business.ViewModels.UserView
 {
-    public class UserUpdateModel
+    public class UserUpdateViewModel
     {
+        public Guid Id { get; set; }
+
         [Required]
         [MinLength(2)]
         [MaxLength(30)]
