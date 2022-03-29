@@ -1,3 +1,11 @@
-﻿@{
+﻿@using Litera.Business.ViewModels.UserView
+@model List<UserViewModel>
 
-}
+<ul>
+
+    @foreach(var user in Model)
+    {
+        <li>@user.Name</li>
+    }
+
+</ul>

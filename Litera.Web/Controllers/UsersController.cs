@@ -1,5 +1,5 @@
 ﻿using Litera.Business.Services.Interfaces;
-using Microsoft.AspNetCore.Http;
+using Litera.Business.ViewModels.UserView;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Litera.Web.Controllers
@@ -13,74 +13,82 @@ namespace Litera.Web.Controllers
             _userService = userService;
         }
 
-        // GET: UserController
-        public ActionResult Index()
+        public async Task<ActionResult> Index()
         {
-            var users = _userService.GetAllAsync();
+            var users = await _userService.GetAllAsync();
             return View(users);
         }
 
-        // GET: UserController/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: UserController/Create
+        [HttpGet]
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: UserController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public async Task<ActionResult> Create(UserViewModel model)
         {
+            if(!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
             try
             {
+                await _userService.Create(model);
                 return RedirectToAction(nameof(Index));
             }
             catch
             {
-                return View();
+                return View(model);
             }
         }
 
-        // GET: UserController/Edit/5
-        public ActionResult Edit(int id)
+        public async Task<ActionResult> Edit(Guid id)
         {
-            return View();
+            var user = await _userService.GetByIdAsync(id);
+            return View(user);
         }
 
-        // POST: UserController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public async Task<ActionResult> Edit(UserViewModel model)
         {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
             try
             {
+                await _userService.Update(model);
                 return RedirectToAction(nameof(Index));
             }
             catch
             {
-                return View();
+                return View(model);
             }
         }
 
-        // GET: UserController/Delete/5
-        public ActionResult Delete(int id)
+        public async Task<ActionResult> Delete(Guid id)
         {
-            return View();
+            var user = await _userService.GetByIdAsync(id);
+            return View(user);
         }
 
-        // POST: UserController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public async Task<ActionResult> Delete(UserViewModel user)
         {
             try
             {
+                await _userService.Delete(user.Id);
                 return RedirectToAction(nameof(Index));
             }
             catch

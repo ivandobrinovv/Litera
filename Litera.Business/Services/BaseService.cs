@@ -19,19 +19,9 @@ namespace Litera.Business.Services
             _mapper = mapper;
         }
 
-        public virtual async Task<bool> Delete(Guid id)
+        public virtual async Task Delete(Guid id)
         {
-            try
-            {
-                await _repository.DeleteAsync(id);
-
-                return true;
-            }
-            catch (ArgumentException ex)
-            {
-                Console.WriteLine(ex.Message);
-                return false;
-            }
+            await _repository.DeleteAsync(id);
         }
 
         public virtual async Task<TEntity> OnBeforeCreate(TViewModel model)
@@ -58,7 +48,7 @@ namespace Litera.Business.Services
             await _repository.UpdateAsync(entity);
         }
 
-        public virtual async ValueTask<TViewModel> GetById(Guid id)
+        public virtual async ValueTask<TViewModel> GetByIdAsync(Guid id)
         {
             var entity = await _repository.GetByIdAsync(id);
 

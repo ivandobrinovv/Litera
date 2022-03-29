@@ -8,8 +8,8 @@ namespace Litera.Business.Services.Interfaces
         where TViewModel : class
     {
         Task Create(TViewModel model);
-        Task<bool> Delete(Guid id);
-        ValueTask<TViewModel> GetById(Guid id);
+        Task Delete(Guid id);
+        ValueTask<TViewModel> GetByIdAsync(Guid id);
         Task<TEntity> OnBeforeCreate(TViewModel model);
         Task<TEntity> OnBeforeUpdate(TViewModel model);
         Task Update(TViewModel model);

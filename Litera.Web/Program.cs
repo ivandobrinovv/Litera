@@ -2,7 +2,6 @@ using Litera.Data;
 using Litera.Data.Repositories;
 using Litera.Data.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using AutoMapper;
 using Litera.Business.Services.Interfaces;
 using Litera.Business.Services;
 
@@ -46,6 +45,8 @@ app.UseRouting();
 
 app.UseAuthorization();
 
-app.MapRazorPages();
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();

@@ -40,7 +40,15 @@ namespace Litera.Data.Repositories
 
         public virtual async Task UpdateAsync(T entity)
         {
-            context.Set<T>().Update(entity);
+            var dbEntity = await GetByIdAsync(entity.Id);
+
+            if (dbEntity == null)
+            {
+                throw new ArgumentException($"No such {typeof(T)} with id: {entity.Id}");
+            }
+
+            context.Entry(dbEntity).CurrentValues.SetValues(entity);
+
             await context.SaveChangesAsync();
         }
 

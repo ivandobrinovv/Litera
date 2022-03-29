@@ -24,7 +24,7 @@ namespace Litera.Business.Services
 
         public override async Task<User> OnBeforeUpdate(UserViewModel model)
         {
-            var entity = await GetById(model.Id);
+            var entity = await GetByIdAsync(model.Id);
             model.Password = entity.Password;
 
             return await base.OnBeforeUpdate(model);
@@ -32,7 +32,7 @@ namespace Litera.Business.Services
 
         public async Task UpdatePassword(UserUpdatePasswordViewModel model)
         {
-            var user = await GetById(model.Id);
+            var user = await GetByIdAsync(model.Id);
 
             if (model.NewPassword == model.RepeatNewPassword)
             {
